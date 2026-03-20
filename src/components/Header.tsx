@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import { Search, Menu, X, User, ShoppingBag } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { motion, AnimatePresence } from "framer-motion";
@@ -53,9 +54,11 @@ const Header = () => {
           <Button variant="ghost" size="icon" className="text-primary-foreground/70 hover:text-gold hover:bg-jet-light">
             <ShoppingBag className="h-5 w-5" />
           </Button>
-          <Button className="hidden md:flex gradient-gold text-accent-foreground font-semibold text-sm px-5 hover:opacity-90 transition-opacity rounded-full">
-            <User className="h-4 w-4 mr-2" />
-            Login
+          <Button asChild className="hidden md:flex gradient-gold text-accent-foreground font-semibold text-sm px-5 hover:opacity-90 transition-opacity rounded-full">
+            <Link to="/login">
+              <User className="h-4 w-4 mr-2" />
+              Login
+            </Link>
           </Button>
           <Button
             variant="ghost"
@@ -95,9 +98,11 @@ const Header = () => {
                   {item.label}
                 </a>
               ))}
-              <Button className="w-full gradient-gold text-accent-foreground font-semibold rounded-full">
-                <User className="h-4 w-4 mr-2" />
-                Login / Register
+              <Button asChild className="w-full gradient-gold text-accent-foreground font-semibold rounded-full">
+                <Link to="/login">
+                  <User className="h-4 w-4 mr-2" />
+                  Login / Register
+                </Link>
               </Button>
             </div>
           </motion.div>
