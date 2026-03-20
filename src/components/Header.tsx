@@ -98,9 +98,11 @@ const Header = () => {
                   {item.label}
                 </a>
               ))}
-              <Button className="w-full gradient-gold text-accent-foreground font-semibold rounded-full">
-                <User className="h-4 w-4 mr-2" />
-                Login / Register
+              <Button asChild className="w-full gradient-gold text-accent-foreground font-semibold rounded-full">
+                <Link to="/login">
+                  <User className="h-4 w-4 mr-2" />
+                  Login / Register
+                </Link>
               </Button>
             </div>
           </motion.div>
